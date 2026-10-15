@@ -1,4 +1,4 @@
-## Actores 
+## Actores
 - Integrante del equipo 
 ## Requisitos funcionales 
 RF1. El sistema debe permitir crear una tarea con los campos título, descripción, responsable, estado y fecha límite
