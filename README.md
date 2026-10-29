@@ -143,18 +143,6 @@ El servicio está en el plan gratuito de Render, por lo que la primera petición
 
 # Tablero Kanban
 
-| Por hacer                     | En progreso | Hecho |
-|                               |             |       |
-| HU1: Crear tarea              |             |       |
-| HU2: Listar tareas            |             |       |
-| HU3: Editar tarea             |             |       |
-| HU4: Eliminar tarea           |             |       |
-| HU5: Asignar tarea            |             |       |
-| HU6: Cambiar estado           |             |       |
-| HU7: Filtrar por estado       |             |       |
-| HU8: Filtrar por responsable  |             |       |
-| HU9: Registrar integrantes    |             |       |
-
 
 | Por hacer | En progreso | Hecho                     |
 |-----------|-------------|-------                    |
