@@ -1,7 +1,12 @@
+const ESTADOS_VALIDOS = ['pendiente', 'en progreso', 'hecha'];
 const data = require('../data/tareas');
 
 function listar(req, res) {
-  res.json(data.obtenerTodas());
+  let resultado = data.obtenerTodas();
+  const { estado, responsable } = req.query;
+  if (estado) resultado = resultado.filter(t => t.estado === estado);
+  if (responsable) resultado = resultado.filter(t => t.responsable === responsable);
+  res.json(resultado);
 }
 
 function obtener(req, res) {
@@ -29,9 +34,12 @@ function crear(req, res) {
 
 function actualizar(req, res) {
   const id = parseInt(req.params.id);
+  const { estado } = req.body;
+  if (estado && !ESTADOS_VALIDOS.includes(estado)) {
+    return res.status(400).json({ error: 'estado debe ser pendiente, en progreso o hecha' });
+  }
   const actualizada = data.actualizar(id, req.body);
-  if (!actualizada)
-    return res.status(404).json({ error: 'Tarea no encontrada' });
+  if (!actualizada) return res.status(404).json({ error: 'Tarea no encontrada' });
   res.json(actualizada);
 }
 

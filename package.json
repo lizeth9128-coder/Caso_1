@@ -1,9 +1,12 @@
-const express = require('express');
-const app = express();
-app.use(express.json());
-
-const rutasTareas = require('./src/routes/tareas');
-app.use('/tareas', rutasTareas);
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log('Servidor activo en el puerto ' + PORT));
+{
+    "name": "caso-1",
+    "version": "1.0.0",
+    "description": "API gestor de tareas",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "express": "^5.3.0"
+    }
+}
