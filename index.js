@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('API funcionando');
+  });
+
 const rutasTareas = require('./src/routes/tareas');
 app.use('/tareas', rutasTareas);
 
