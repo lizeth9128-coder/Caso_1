@@ -1,7 +1,7 @@
 # Gestor de tareas en equipo
 
 **Proyecto integrador - Programación Aplicada**
-**Caso asignado:** Caso 1 · Gestor de tareas
+**Caso asignado:** Caso 1 · Gestor de tareas 
 
 ## Integrantes
 - Ivan David Mateus
