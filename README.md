@@ -1,3 +1,58 @@
+# Gestor de tareas en equipo
+
+**Proyecto integrador - Programación Aplicada**
+**Caso asignado:** Caso 1 · Gestor de tareas
+
+## Integrantes
+- Ivan David Mateus
+- Lizeth Dahiana Cardona
+
+## Descripción
+API REST hecha con Node.js y Express para que un equipo organice sus tareas: crear, listar, editar y eliminar tareas, asignarlas a un responsable, cambiar su estado (pendiente, en progreso, hecha) y filtrarlas por estado o responsable.
+
+## Enlaces
+- URL pública (Render): https://caso1-asignacion-de-tareas.onrender.com
+- Repositorio (GitHub): https://github.com/lizeth9128-coder/Caso_1
+
+## Endpoints
+
+| Método | Ruta | Qué hace |
+|--------|------|----------|
+| GET | /tareas | Lista todas las tareas (admite ?estado= y ?responsable=) |
+| GET | /tareas/:id | Consulta una tarea por id |
+| POST | /tareas | Crea una tarea nueva |
+| PUT | /tareas/:id | Edita una tarea (incluye cambiar el estado) |
+| DELETE | /tareas/:id | Elimina una tarea |
+
+## Cómo probar cada endpoint
+
+Listar todas:
+curl https://caso1-asignacion-de-tareas.onrender.com/tareas
+
+Filtrar por estado:
+curl "https://caso1-asignacion-de-tareas.onrender.com/tareas?estado=pendiente"
+
+Filtrar por responsable:
+curl "https://caso1-asignacion-de-tareas.onrender.com/tareas?responsable=Ana"
+
+Consultar una tarea:
+curl https://caso1-asignacion-de-tareas.onrender.com/tareas/1
+
+Crear una tarea:
+curl -X POST https://caso1-asignacion-de-tareas.onrender.com/tareas -H "Content-Type: application/json" -d '{"titulo":"Mi tarea","responsable":"Ana"}'
+
+Editar una tarea:
+curl -X PUT https://caso1-asignacion-de-tareas.onrender.com/tareas/1 -H "Content-Type: application/json" -d '{"estado":"en progreso"}'
+
+Eliminar una tarea:
+curl -X DELETE https://caso1-asignacion-de-tareas.onrender.com/tareas/1
+
+## Nota
+El servicio está en el plan gratuito de Render, por lo que la primera petición puede tardar hasta 50 segundos si estuvo inactivo. Los datos se guardan en memoria y se reinician cuando el servicio se reinicia.
+
+
+
+
 # Product Backlog
 
 **HU1 (RF1).** 
