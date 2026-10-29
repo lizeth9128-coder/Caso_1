@@ -1,3 +1,4 @@
+
 const ESTADOS_VALIDOS = ['pendiente', 'en progreso', 'hecha'];
 const integrantes = require('../data/integrantes');
 const data = require('../data/tareas');
@@ -58,4 +59,6 @@ function actualizar(req, res) {
   res.json(actualizada);
 }
 
-module.exports = { listar, obtener, crear, actualizar, eliminar };
+module.exports = { listar, obtener, crear, actualizar, eliminar }; 
+
+
