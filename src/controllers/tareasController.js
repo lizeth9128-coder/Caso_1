@@ -37,6 +37,8 @@ function crear(req, res) {
     descripcion: req.body.descripcion || '',
     responsable,
     estado: 'pendiente',
+    fechaLimite: req.body.fechaLimite || '',
+
   });
   res.status(201).json(nueva);
 }
@@ -58,6 +60,14 @@ function actualizar(req, res) {
   const actualizada = data.actualizar(id, req.body);
   if (!actualizada) return res.status(404).json({ error: 'Tarea no encontrada' });
   res.json(actualizada);
+}
+
+
+function eliminar(req, res) {
+  const id = parseInt(req.params.id);
+  const exito = data.eliminar(id);
+  if (!exito) return res.status(404).json({ error: 'Tarea no encontrada' });
+  res.status(204).send();
 }
 
 module.exports = { listar, obtener, crear, actualizar, eliminar }; 

@@ -1,0 +1,1 @@
+El Product Backlog, la división en sprints y el tablero Kanban están en el README.md.
