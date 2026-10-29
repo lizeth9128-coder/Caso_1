@@ -5,8 +5,8 @@ function obtenerTodos() {
   return integrantes;
 }
 
-function obtenerPorNombre(nombre) {
-  return integrantes.find(i => i.nombre.toLowerCase() === nombre.toLowerCase());
+function obtenerPorId(id) {
+  return integrantes.find(i => i.id === id);
 }
 
 function crear(datos) {
@@ -15,4 +15,18 @@ function crear(datos) {
   return nuevo;
 }
 
-module.exports = { obtenerTodos, obtenerPorNombre, crear };
+function actualizar(id, datos) {
+  const integrante = obtenerPorId(id);
+  if (!integrante) return null;
+  Object.assign(integrante, datos);
+  return integrante;
+}
+
+function eliminar(id) {
+  const index = integrantes.findIndex(i => i.id === id);
+  if (index === -1) return false;
+  integrantes.splice(index, 1);
+  return true;
+}
+
+module.exports = { obtenerTodos, obtenerPorId, crear, actualizar, eliminar };
