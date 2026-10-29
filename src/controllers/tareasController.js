@@ -1,5 +1,6 @@
 
 const ESTADOS_VALIDOS = ['pendiente', 'en progreso', 'hecha'];
+
 const integrantes = require('../data/integrantes');
 const data = require('../data/tareas');
 
